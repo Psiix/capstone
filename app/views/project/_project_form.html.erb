@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <h1>New Project</h1>
+</div>
+<%= simple_form_for project, class: 'clearfix' do |f| %>
+  <div class="modal-body">
+    <%= f.input :title %>
+    <%= f.input :description %>
+     <%= f.input :created %>
+    <%= f.input :completed %>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit 'Save', class: 'btn btn-lg btn-primary' %>
+  </div>
+<% end %>
