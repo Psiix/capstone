@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 body {
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 section {
@@ -46,6 +46,7 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
 /* header */
 
 #logo {
@@ -55,14 +56,15 @@ p {
   color:red;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 2px ;
   font-weight: bold;
 }
 
 #logo:hover {
   color: #ffc;
-  text-decoration: none;
+  text-decoration: dashed;
 }
+
 .modal form {
   margin-bottom: 0;
 }
