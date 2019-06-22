@@ -1,0 +1,13 @@
+<div class="center">
+   <h1>THE CHOSEN ONES<h1>
+
+      <p>Welcome to "THE CHOSEN ONES" task application</p>
+      <% if logged_in? %>
+       <%= link_to "New Task!",   new_task_path,    class: "btn btn-lg btn-primary" %>
+       <%= link_to "New Project", new_project_path,           class: "btn btn-lg btn-primary" %>
+      <% else %>
+       <%= link_to "New Task!",   '#',    class: "btn btn-lg btn-primary" %>
+       <%= link_to "New Project", '#',           class: "btn btn-lg btn-primary" %>
+       <%= link_to "Sign up now!", new_user_path,  class: "btn btn-lg btn-primary" %>
+      <% end %>
+</div>
