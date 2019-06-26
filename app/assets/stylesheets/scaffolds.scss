@@ -1,9 +1,9 @@
 body {
   background-color: #ffffff;
-  color:  #669999;
-  margin: 33px;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  color:  #4d94ff;
+  margin: 50px;
+  font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+  font-size: 15px;
   line-height: 18px;
   background-image: url(triangle.jpg);
   background-repeat: no-repeat;
@@ -11,10 +11,78 @@ body {
 }
 
 p, ol, ul, td {
-  font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+  font-family: DejaVu Sans Mono, monospace;
   font-size: 20px;
-  line-height: 18px;
+  line-height: 20px;
+  color: #0000ff;
 }
+
+li.home_page {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 40%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: auto;
+  font-family: Georgia, serif;
+}
+
+li.about_page {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: auto;
+  font-family: Georgia, serif;
+}
+
+li.contact_page {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 60%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: auto;
+  font-family: Georgia, serif;
+}
+
+li.login_page {
+  height: auto;
+  width: auto;
+  position: absolute;
+  left: 90%;
+  margin-left: -40px;
+  top: 50%;
+  margin-top: auto;
+  font-family: Georgia, serif;
+}
+
+li.user_page {
+  height: auto;
+  width: auto;
+  position: absolute;
+  left: 85%;
+  margin-left: -40px;
+  top: 50%;
+  margin-top: auto;
+  font-family: Georgia, serif;
+}
+
+li.dropdown {
+  height: auto;
+  width: auto;
+  position: absolute;
+  left: 90%;
+  margin-left: -40px;
+  top: 50%;
+  margin-top: auto;
+  font-family: Georgia, serif;
+}
+
 
 pre {
   background-color: #eee;
@@ -26,7 +94,7 @@ a {
   color: #000;
 
   &:visited {
-    color: #666;
+    color: #000000;
   }
 
   &:hover {

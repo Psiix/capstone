@@ -3,7 +3,7 @@
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: none;
+$gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -28,6 +28,20 @@ textarea {
  h1 {
   margin-bottom: 10px;
 }
+ p {
+  font-size: 25px;
+  font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+  color: #666666;
+  letter-spacing: -1px;
+  }
+ .btn-primary {
+    font-family: Times New Roman, Times, serif;
+    font-size: 18px;
+    letter-spacing: -1px;
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #000000;
+ }
 }
 
 /* typography */
@@ -41,6 +55,12 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+} 
+
+div.container > h1 {
+  font-size: 5em;
+  font-family: Georgia, serif;
+  color: #000000;
 }
 
 h2 {
@@ -53,7 +73,7 @@ h2 {
 }
 
 p {
-  font-size: 1.1em;
+  font-size: 1.3em;
   line-height: 1.7em;
 }
 
@@ -63,16 +83,17 @@ p {
    background: transparent;
    border: none;
  }
-
+ 
 #logo {
   float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
+  margin-right: 6px;
+  margin-top: 20px;
+  // font-size: 1.7em;
   // color: red;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 2px ;
-  font-weight: bold;
+  // text-transform: uppercase;
+  // letter-spacing: -1px;
+  padding-top: -2px ;
+  // font-weight: bold; 
 }
 
 .modal form {
@@ -80,7 +101,7 @@ p {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #ffffff;
+  color: #000000;
   background-color: transparent;
 }
 
@@ -89,13 +110,15 @@ p {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
+  width: auto;
   margin-bottom: 15px;
   @include box_sizing;
 }
 
 input {
   height: auto !important;
+  color: #000000;
+  
 }
 
 #error_explanation {
@@ -130,28 +153,103 @@ input {
 /* footer */
 
 footer {
-  margin-top: 100px;
-  padding-top: 10px;
-   // border-top: 2px solid #cc5200;
-  color: #777;
-a {
-  color: white;
-  &:hover {
-    color: #f2f2f2;
-    background-color: transparent;
+  margin-top: 200px;
+  padding-top: 5px;
+  border-top: 2px solid $gray-medium-light;
+  color: #993d00;
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+    }
   }
- }
- small {
-  float: left;
- }
- ul {
-  float: right;
-  list-style: none;
- li {
-  float: left;
-  margin-left: 15px;
-   }
+  small {
+    float: left;
   }
- }
+  ul {
+    float: right;
+    list-style: none;
+   li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+      color: #000000;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
 
 
