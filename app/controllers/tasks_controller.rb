@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy, :complete]
+ #  before_action :logged_in_user, only: [:create, :destroy]
+      before_action :correct_user,   only: :destroy
 
   # GET /tasks
   # GET /tasks.json
@@ -25,16 +27,15 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    @task = current_user.projects.tasks.build(task_params)
-
-    respond_to do |format|
-      if @task.save
-        redirect_to current_user
-      else
-        render 'new'
-      end
+    @task = current_user.tasks.build(task_params)
+    if @task.save
+      flash[:success] = "task created!"
+      redirect_to root_url
+    else
+       #  @feed_items = []
+      render 'new'
     end
-  end
+    end
 
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
@@ -73,5 +74,9 @@ class TasksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
       params.require(:task).permit(:content)
+    end
+    def correct_user
+      @task = current_user.tasks.find_by(id: params[:id])
+      redirect_to root_url if @task.nil?
     end
 end
