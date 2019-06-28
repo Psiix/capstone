@@ -1,8 +1,6 @@
 class Project < ApplicationRecord
     has_many :tasks
-    has_many :user_projects
-    has_many :users, through: :user_projects
+    has_and_belongs_to_many :users
     default_scope -> { order(created_at: :desc) }
-    validates :user_id, presence: true
     validates :name, presence: true, length: { maximum: 100 }
 end

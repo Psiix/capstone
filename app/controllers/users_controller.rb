@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :edit]
-  before_action :admin_user, only: :destroy
+  before_action :correct_user, only: :edit
   
   def new
     @user = User.new
@@ -14,7 +13,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @projects = @user.projects.paginate(page: params[:page])
-    # @tasks = @user.projects(:id).tasks
+    @tasks = @user.tasks
   end
   
   def create

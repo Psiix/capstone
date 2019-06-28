@@ -16,6 +16,8 @@
     <%= form.text_field :content, id: :task_content %>
   </div>
   
+  
+  
   <div class="field">
     <%= form.label :name, "Belongs to which project?" %>
     <%= form.collection_select :project_id, current_user.projects,:id,:name %>

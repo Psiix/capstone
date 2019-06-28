@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy, :complete]
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
  #  before_action :logged_in_user, only: [:create, :destroy]
-      before_action :correct_user,   only: :destroy
+ #  before_action :correct_user,   only: :destroy
 
   # GET /tasks
   # GET /tasks.json
@@ -17,7 +17,9 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    @task = Task.new
+    @project = current_user.projects.where('id = ?', current_user.projects.ids)
+    #@task = Task.new(:project_id => params[:project_id])
+    @task = current_user.tasks.build
   end
 
   # GET /tasks/1/edit
@@ -30,9 +32,8 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build(task_params)
     if @task.save
       flash[:success] = "task created!"
-      redirect_to root_url
+      redirect_to current_user
     else
-       #  @feed_items = []
       render 'new'
     end
   end
@@ -56,7 +57,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
+      format.html { redirect_to current_user, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,7 +74,7 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:content)
+      params.require(:task).permit(:content, :project_id)
     end
     def correct_user
       @task = current_user.tasks.find_by(id: params[:id])
